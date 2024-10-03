@@ -58,3 +58,10 @@ function Calc(){
         }
     } 
 }
+
+function sumarVentana(){
+    let a = recogerNum("Dime numero A:"); //es lo mismo con el window que sin el, sin el mas corto
+    let b = recogerNum("Dime numero B:");
+    let sign = prompt("Dime el calculo que quieres hacer:");
+    Calc();
+}

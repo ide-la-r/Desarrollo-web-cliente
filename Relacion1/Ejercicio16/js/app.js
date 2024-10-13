@@ -47,7 +47,4 @@ function solicitarComensales(a) {
 let numMesas = prompt("Introduzca el numero de mesas que quiere que tenga su restaurante:");
 let mesas = [];
 iniciarMesas(mesas,numMesas);
-console.log(mesas);
-
-let numComensales = 3;
 solicitarComensales(mesas);

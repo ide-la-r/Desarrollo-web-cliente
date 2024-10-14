@@ -14,7 +14,6 @@ function comprobarComensales(personas) {
     return (personas); 
 }
 
-
 function solicitarComensales(a) {
     let comensales = prompt("Introduce el numero de comensales:");
     comensales = comprobarComensales(comensales);

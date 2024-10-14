@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio numero 6 de programacion basica</title>
+</head>
+<body>
+    <script>
+        let num;
+        do {
+            num = Number(prompt("Dime un numero entero positivo:"));
+        } while (num < 0);
+
+        //Mostrar los divisores
+        let sumaCuadrados = 0;
+        let divisores = "Divisores de " + num + ": ";
+
+        for (let i = 1; i <= num; i++) {
+            if (num % i === 0) { // Si es divisor
+                divisores += i + " ";
+                sumaCuadrados += i * i; // b) Sumar los cuadrados de los divisores
+            }
+        }
+
+        alert(divisores);
+        alert("La suma de los cuadrados de los divisores es: " + sumaCuadrados);
+
+        let raiz = Math.sqrt(sumaCuadrados);
+        if (raiz === Math.floor(raiz)) { // Verifica si la raíz cuadrada es un número entero
+            alert("La suma de los cuadrados (" + sumaCuadrados + ") es un cuadrado perfecto.");
+        } else {
+            alert("La suma de los cuadrados (" + sumaCuadrados + ") NO es un cuadrado perfecto.");
+        }
+    </script>
+</body>
+</html>

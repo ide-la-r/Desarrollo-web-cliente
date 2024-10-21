@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 dom</title>
+</head>
+<body>
+    <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+    <script>
+        function ready() {
+            alert("DOM esta listo");
+            alert(`Tamaño de la imagen: ${img.offsetWidth}x${img.offsetHeight} ` )
+        }
+        /*
+        preparamos un manejador de eventos, este en este caso escucha que el DOMcontentLoaded y en este caso
+        se lanza antes de que se cargue la imagen.
+        lo que dice DOMContentLoaded es que el contenido del html esta completado y el arbol del dom tambien
+        pero no tiene porque todo estar listo, como los recursos en este caso la foto
+        */
+        /*opcion 1
+        document.addEventListener("DOMContentLoaded", ready)*/
+
+        //opcion 2, es que se hace despues de que este todo listo
+        window.onload = function ready() {
+            alert("DOM esta listo");
+            alert(`Tamaño de la imagen: ${img.offsetWidth}x${img.offsetHeight} ` )
+        }
+        //para hacerlo antes en vez de despues serie igual que .onload pero con .beforeunload
+
+        //como hacer mas corta la opcion 2
+        window.addEventListener('load', ready);
+
+        //esto es lo mismo que la opcion uno.
+        document.addEventListener("DOMContentLoades" , () => {
+            alert("Dom listo!");
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js">
+    </script>
+    <script>// se pone separado porque cuando hay un enlace src no se puede poner nada dentro, tienes q tenerlo separado.
+        alert("Libreria cargada, linea de script ejecutada")
+    </script>
+</body>
+</html>

@@ -6,7 +6,32 @@
     <title>Selectores</title>
 </head>
 <body onload="inicioDOM()">
-    <h1 id="title">Inicio</h1>
+    <h1 id="title" onclick="cambioCabecera(this)">Inicio</h1><!--esto dice que se aplique a si misma | primer tipo-->
+    <h2 id="subtitle">Subtitulo</h2> <!--Segundo tipo con una funcion en el js para el color-->
+    <h3  id="h3subtitle">Subtitulo 2</h3>
+    
+    <form name="up"><input type="text" /></form>
+    <div name="up"><input type="text" /></div>
+    <div name="down"><input type="text" /></div>
+
+    <section id="proyectos" class="projects">
+        <p class="parrafos1">1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat tempora magnam corporis dolorem, vitae recusandae, error cupiditate sequi, expedita consequatur doloremque. Minus consectetur sunt assumenda perferendis maxime eligendi necessitatibus quaerat.</p>
+        <p class="parrafos2">2. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum enim temporibus a, rerum minus iusto accusantium reiciendis exercitationem quidem suscipit, pariatur consequatur deserunt magnam harum, cum voluptate architecto sint delectus.</p>
+        <p class="parrafos1">3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero molestias sequi sint officiis tenetur nisi? In dignissimos corrupti adipisci aliquid molestiae laboriosam ipsam quidem unde. Laboriosam error velit quos ea?</p>
+        <p class="parrafos2">4. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam enim ea nihil libero dolores saepe fugiat dolor, delectus adipisci ratione praesentium sunt impedit cumque inventore ab sed ad molestiae quidem?</p>
+        <p class="parrafos1">5. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum reprehenderit voluptate molestias ab ipsa possimus vitae libero quis? Deserunt itaque consequuntur odio consectetur aut ipsum totam, est animi neque voluptatibus!</p>
+        <p class="parrafos2">6. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae reiciendis quibusdam consequuntur dolor, voluptas, unde blanditiis dignissimos architecto, delectus non qui mollitia nam facere et eum excepturi natus doloremque aperiam?</p>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <p id="parrafos7" class="parrafos1">1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat tempora magnam corporis dolorem, vitae recusandae, error cupiditate sequi, expedita consequatur doloremque. Minus consectetur sunt assumenda perferendis maxime eligendi necessitatibus quaerat.</p>
+        <p class="parrafos2">2. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum enim temporibus a, rerum minus iusto accusantium reiciendis exercitationem quidem suscipit, pariatur consequatur deserunt magnam harum, cum voluptate architecto sint delectus.</p>
+        <p class="parrafos1">3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero molestias sequi sint officiis tenetur nisi? In dignissimos corrupti adipisci aliquid molestiae laboriosam ipsam quidem unde. Laboriosam error velit quos ea?</p>
+        <p class="parrafos2">4. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam enim ea nihil libero dolores saepe fugiat dolor, delectus adipisci ratione praesentium sunt impedit cumque inventore ab sed ad molestiae quidem?</p>
+        <p class="parrafos1">5. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum reprehenderit voluptate molestias ab ipsa possimus vitae libero quis? Deserunt itaque consequuntur odio consectetur aut ipsum totam, est animi neque voluptatibus!</p>
+        <p class="parrafos2">6. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae reiciendis quibusdam consequuntur dolor, voluptas, unde blanditiis dignissimos architecto, delectus non qui mollitia nam facere et eum excepturi natus doloremque aperiam?</p>
+    </section>
+     
     <script src="./js/dom.js"></script>
 </body>
 </html>

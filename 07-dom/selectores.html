@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selectores</title>
+    <style>
+        .caja--negra{
+            width: 200px;
+            height: 50px;
+            border: 5px solid black;
+            padding: 20px;
+        }
+        .caja--roja{
+            width: 200px;
+            height: 50px;
+            border: 5px solid red;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body onload="inicioDOM()">
     <h1 id="title" onclick="cambioCabecera(this)">Inicio</h1><!--esto dice que se aplique a si misma | primer tipo-->
@@ -11,8 +25,8 @@
     <h3  id="h3subtitle">Subtitulo 2</h3>
     
     <form name="up"><input type="text" /></form>
-    <div name="up"><input type="text" /></div>
-    <div name="down"><input type="text" /></div>
+    <div id="caja1" class="caja--negra" name="dow"><input type="text" /></div>
+    <div id="caja2" class="caja--negra" name="down"><input type="text" /></div>
 
     <section id="proyectos" class="projects">
         <p class="parrafos1">1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat tempora magnam corporis dolorem, vitae recusandae, error cupiditate sequi, expedita consequatur doloremque. Minus consectetur sunt assumenda perferendis maxime eligendi necessitatibus quaerat.</p>

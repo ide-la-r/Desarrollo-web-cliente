@@ -75,32 +75,58 @@ function cambioCabecera(cabecera){
         estado = true;
     }
     //cabecera.style.color = cabecera.style.color === 'red' ? 'black' : 'red';
+}
+
+//vamos a modificar el titulo 2
+function cambioSubtitulo(elemento){
+    elemento.style.color = (elemento.style.color === 'orange') ? 'pink' : 'orange';
+}
+
+//let elemento = document.getElementById('subtitle');
+//elemento.style.color = 'orange';
+document.getElementById('subtitle').onclick = cambioSubtitulo2;
+function cambioSubtitulo2(){
+    let elemento  = document.getElementById('subtitle');
+    elemento.style.color = (elemento.style.color === 'orange') ? 'pink' : 'orange';
+}
 
 
-    //vamos a modificar el titulo 2
-    function cambioSubtitulo(elemento){
-        elemento.style.color = (elemento.style.color === 'orange') ? 'pink' : 'orange';
+let titleh3 = document.getElementById('h3subtitle');
+titleh3.addEventListener('click',cambioSubtitulo3);
+
+//lo vemos el siguiente dia
+document.getElementById('h3subtitle').onclick = cambioSubtitulo3;
+function cambioSubtitulo3(){
+    let elemento  = document.getElementById('h3subtitle');
+    elemento.style.color = (elemento.style.color === 'blue') ? 'red' : 'blue';
+}
+
+let caja1 = document.getElementById('caja1');
+caja1.addEventListener('click', cambioclase1);
+
+let caja2 = document.getElementById('caja2');
+caja2.addEventListener('click', cambioclase2)
+
+function cambioclase1(){
+    // caja1.style.background = "black";
+    // caja1.style.color = white; esta es la manera "Bulgar de hacerlo"
+    if (caja1.classList.contains('caja--negra')){
+        caja1.classList.remove('caja--negra');
+        caja1.classList.add('caja--roja');
     }
-
-    //let elemento = document.getElementById('subtitle');
-    //elemento.style.color = 'orange';
-
-    document.getElementById('subtitle').onclick = cambioSubtitulo2;
-    function cambioSubtitulo2(){
-        let elemento  = document.getElementById('subtitle');
-        elemento.style.color = (elemento.style.color === 'orange') ? 'pink' : 'orange';
+    else{
+        caja1.classList.remove('caja--roja');
+        caja1.classList.add('caja--negra');
     }
+}
 
-    //opcion 1 llamada a eventos desde JS
-    //Elemento.onclick = cambioSubtitulo(elemento);
-
-    let titleh3 = document.getElementById('h3title');
-    titleh3.addEventListener('click',cambioSubtitulo3());
-
-    //lo vemos el siguiente dia
-    document.getElementById('h3title').onclick = cambioSubtitulo3;
-    function cambioSubtitulo3(){
-        let elemento  = document.getElementById('h3title');
-        elemento.style.color = (elemento.style.color === 'blue') ? 'red' : 'blue';
+function cambioclase2(){
+    if (caja2.classList.contains('caja--negra')){
+        caja2.classList.remove('caja--negra');
+        caja2.classList.add('caja--roja');
     }
+    else{//es lo mismo que lo de arriba pero mas corto
+        caja2.classList.replace('caja--roja', 'caja--negra');
+    }
+    
 }

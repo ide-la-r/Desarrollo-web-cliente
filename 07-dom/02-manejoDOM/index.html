@@ -9,7 +9,7 @@
             background-color: red;
             color: white;
         }
-        .section{
+        .seccion1{
             padding: 10px;
             border: 2px solid blue;
             margin-bottom: 10px;
@@ -26,6 +26,40 @@
     </style>
 </head>
 <body>
-    <h1 class="cabeceras" id="cabecera" onmouseover="rojo(this)" onmouseout="azul(this)" onmousedown=""></h1>
+    <h1 class="cabeceras" id="cabecera" onmouseover="rojo(this)" onmouseout="azul(this)" onmousedown="">Manejo de elementos DOM con JS</h1>
+<!-- Creamos elementos nuevos dom -->
+    <section id="seccionDivsAIncluir" class="seccion1">
+        Seccion Divs a Incluir
+        <div id="divAIncluir" class="caja"></div>
+    </section>
+    <div id="divAIncluir2" class="caja"> Caja - externa a la seccion</div>
+    <button type="submit" id="boton1">Incluyo nuevo elemento</button>
+    <br><br>
+    <button type="submit" id="boton2">Incluyo nuevo elemento 2</button>
+    <br><br>
+    <button type="submit" id="boton3">Incluyo nuevo elemento 3</button>
+    <br><br>
+    <button type="submit" id="boton4">Incluyo nuevo elemento 4</button>
+    <br><br>
+    <section id="seccionDivsAIncluir2" class="seccion1">
+        Seccion Divs a Incluir 2
+    </section>
+    <ul>
+        <li ><a href="#">Inicio</a></li>
+        <li ><a href="#">Proyectos</a></li>
+        <li ><a href="#">Blogs</a></li>
+        <li ><a href="#">Acerca de</a></li>
+    </ul>
+    <br><br>
+    <button type="submit" id="reemplazoChild">Reemplazo hijo</button>
+    <button type="submit" id="creoFragmentos">Creo fragmentos</button>
+    
+    <div id="miCaja">
+        <h3>Hola a todos</h3>
+    </div>
+    <button id="vamos">Vamos</button>
+    <button id="paramos">Paramos</button>
+    <button id="imagenEnlace">Imagen y Enlace</button>
+    <script src="./js/manejoDOM.js "></script>
 </body>
 </html>

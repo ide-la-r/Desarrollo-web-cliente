@@ -31,3 +31,70 @@ function incluirAnuncio(){
     let seccion = document.getElementById("seccionArticles");
     seccion.appendChild(nuevoHijo);
 }
+    //Añadir un articulo
+    // <article class="articles__article">
+    //     <div class="article__datos">
+    //         <span>Fecha: 01 de agosto</span>
+    //         <span>Categoría: Pruebas</span>
+    //     </div>
+    //     <h4 class="article__subtitle">
+    //         <a href="#">Título de artículo 5</a>
+    //     </h4>
+    //     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
+    //     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, dolores. Consequatur quis tenetur, modi quod quam repellat facilis minus molestias dicta eum ex voluptatibus itaque necessitatibus, possimus quas? Fugiat, veritatis!</p>
+    // </article>
+
+let creaArticulo = document.getElementById("incluyeArticulo");
+creaArticulo.addEventListener("click", incluirArticulo2);
+
+function incluirArticulo(){
+    //pido al usuario titulo, descripcion, fecha del articulo y categoria
+    let titulo = prompt("Dime el titulo del articulo:");
+    let descripcion = prompt("Dime la descripcion del articulo:");
+    let fechaArticulo = prompt("Dime la fecha del articulo:");
+    let catArticulo = prompt("Dime la categoria del articulo:");
+
+    let nuevoArticulo = document.createElement("article");
+    nuevoArticulo.classList.add('articles_article');
+
+    //esta es otra forma de añadirlo, se podria poner entero de esta manera
+    nuevoArticulo.innerHTML = `<div class="article__datos">
+                                    <span>${fechaArticulo}</span>
+                                    <span>${catArticulo}</span>
+                                </div>`;
+    let nuevoSubtitulo = document.createElement("h4");
+    nuevoSubtitulo.classList.add('article__subtitle');
+    nuevoSubtitulo.innerHTML = `<a href="#">${titulo}</a>`;
+
+    let nuevoParrafo = document.createElement('p');
+    nuevoParrafo.textContent = descripcion;
+
+    //vamos a añadirle a nuevoarticulo los hijos que nos quedan por agregar
+    nuevoArticulo.appendChild(nuevoSubtitulo);
+    nuevoArticulo.appendChild(nuevoParrafo);
+
+    let seccion = document.getElementById("seccionArticles");
+    seccion.appendChild(nuevoArticulo);
+}
+
+function incluirArticulo2(){
+    let titulo = prompt("Dime el titulo del articulo:");
+    let descripcion = prompt("Dime la descripcion del articulo:");
+    let fechaArticulo = prompt("Dime la fecha del articulo:");
+    let catArticulo = prompt("Dime la categoria del articulo:")
+
+    let nuevoArticulo = document.createElement("article");
+    nuevoArticulo.classList.add('articles_article');
+
+    nuevoArticulo.innerHTML =  `<div class="article__datos">
+                                    <span>Fecha:${fechaArticulo}</span>
+                                    <span>Categoría: ${catArticulo}</span>
+                                </div>
+                                <h4 class="article__subtitle">
+                                    <a href="#">${titulo}</a>
+                                </h4>
+                                <p>${descripcion}</p>
+                                <p>${descripcion}</p>`;
+    let seccion = document.getElementById("seccionArticles");
+    seccion.appendChild(nuevoArticulo);
+}

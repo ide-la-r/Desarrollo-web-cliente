@@ -20,3 +20,20 @@ botonIzquierda.addEventListener("click", function(){
         posicionActual = 0;
     }
 });
+
+//Mismo ejercicio pero con el over "apartado c)"
+let movimientoActivo;
+
+function moverDerecha() {
+    movimientoActivo = setInterval(() => {
+        posicionActual += desplazamiento;
+        imagen[0].style.marginLeft = `${posicionActual}px`;
+    }, 20);
+}
+
+function resetear(){
+    clearInterval(movimientoActivo)
+}
+
+imagen[0].addEventListener("mouseover", moverDerecha);
+imagen[0].addEventListener("mouseout", resetear);

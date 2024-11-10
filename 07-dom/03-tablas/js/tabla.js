@@ -18,7 +18,7 @@ function creoTabla(){
     let seccionTabla = document.getElementById('seccionTabla');
 
     let nuevaTabla = document.createElement('table');
-    let tablaBody = document.createElement('tbody')
+    let tablaBody = document.createElement('tbody');
 
     nuevaTabla.style.width = '100%';
     nuevaTabla.setAttribute('border', 1)

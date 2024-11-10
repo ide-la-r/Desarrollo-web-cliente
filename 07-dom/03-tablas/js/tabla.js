@@ -47,5 +47,3 @@ function creoTabla(){
 function cambiarColorColumna(columna){
     columna.style.backgroundColor = columna.style.backgroundColor === 'blue' ? 'green' : 'blue';
 }
-
-

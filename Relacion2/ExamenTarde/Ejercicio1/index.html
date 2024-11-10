@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        #contenedor {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .num {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px dashed #555;
+            min-height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            width: 60px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div class="num" id="div1"></div>
+        <div class="num" id="div2"></div>
+    </div>
+    <button id="botonGenerar">¡¡ Genera !!</button>
+
+    <div id="resultado"></div>
+
+    <button id="botonComparar" disabled>&lt;&lt; Compara &gt;&gt;</button>
+    <script src="./js/app.js"></script>
+</body>
+</html>

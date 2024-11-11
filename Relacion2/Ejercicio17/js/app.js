@@ -1,12 +1,13 @@
 let btnCorrer = document.getElementById('correr');
 btnCorrer.addEventListener('click', iniciarCarrera);
+
 function calcularVelocidades(){
-let velocidades = [];
-for (let i=1; i<=4; i++){
-velocidades.push(parseInt(Math.random()*5 +1));
-}
-console.log(velocidades);
-return velocidades;
+    let velocidades = [];
+    for (let i=1; i<=4; i++){
+        velocidades.push(parseInt(Math.random()*5 +1));
+    }
+    console.log(velocidades);
+    return velocidades;
 }
 function iniciarCarrera(){
     console.log("Estoy aquí");
@@ -44,9 +45,6 @@ function iniciarCarrera(){
         }
     }, 500);
 }
-
-
-
 
 div1.style.setProperty("left", div1.style.getPropertyValue("left") + velocidades[0] + "px");
 // esto es lo mismo que lo de arriba: div1.style.left = div1.style.left + velocidades[0] + "px";

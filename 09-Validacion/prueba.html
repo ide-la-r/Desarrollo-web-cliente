@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>Prueba 1</title>
+    <style type="text/css">
+        #nombreError {
+            display: none;
+            font-size: 0.8em;
+        }
+
+        #nombreError.visible {
+            display: block;
+        }
+
+        #telefonoError {
+            display: none;
+            font-size: 0.8em;
+        }
+
+        #telefonoError.visible {
+            display: block;
+        }
+
+        input.invalido {
+            border-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        <label for="nombre"> Nombre* </label>
+        <input type="text" name="nombre" id="nombre" />
+        <span role="alert" id="nombreError" aria-hidden="true">
+            Ingrese su nombre, por favor
+        </span>
+        <br>
+        <label for="telefono"> Telefono </label>
+        <input type="text" name="telefono" id="telefono" />
+        <br>
+        <span role="alert" id="telefonoError" aria-hidden="true">
+            Ingrese su Telefono, por favor
+        </span>
+        <button id="enviar">Enviar</button>
+    </form>
+    <script>
+        const enviar = document.getElementById("enviar");
+
+        enviar.addEventListener("click", validar);
+
+        function validar(e) {
+            e.preventDefault();//Lo que hace es como ignorar el codigo de fuera y centrase lo que hay aqui dentro.
+
+            const campoNombre = document.getElementById("nombre");
+            const campoTelefono = document.getElementById("telefono");
+            let valido = true;
+
+            if (!campoNombre.value) {
+                const nombreError = document.getElementById("nombreError");
+                nombreError.classList.add("visible");
+                campoNombre.classList.add("invalido");
+                nombreError.setAttribute("aria-hidden", false);
+                nombreError.setAttribute("aria-invalid", true);
+            }
+            else {
+                const nombreError = document.getElementById("nombreError");
+                nombreError.classList.remove("visible");
+                campoNombre.classList.remove("invalido");
+                nombreError.setAttribute("aria-hidden", true);
+                nombreError.setAttribute("aria-invalid", false);
+            }
+
+            if (!campoTelefono.value) {
+                const telefonoError = document.getElementById("telefonoError");
+                telefonoError.classList.add("visible");
+                campoTelefono.classList.add("invalido");
+                telefonoError.setAttribute("aria-hidden", false);
+                telefonoError.setAttribute("aria-invalid", true);
+            }
+            else {
+                const telefonoError = document.getElementById("telefonoError");
+                telefonoError.classList.remove("visible");
+                campoTelefono.classList.remove("invalido");
+                telefonoError.setAttribute("aria-hidden", true);
+                telefonoError.setAttribute("aria-invalid", false);
+            }
+            return valido;
+        }
+    </script>
+</body>
+
+</html>

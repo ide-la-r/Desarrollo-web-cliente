@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boton seleccionado</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Contraseña</label>
+        <input type="text" id="contrasenia" name="contrasenia">
+        <br>
+        <label for="">Confirmar contraseña</label>
+        <input type="text" name="confirmar" id="confirmar">
+        <input type="submit" value="Ok" id="boton" name="boton" disabled>
+    </form>
+    <script> 
+    
+        function checkear(){
+            let contrasenia = document.getElementById("contrasenia");
+            let confirmar = document.getElementById("confirmar");
+            let boton = document.getElementById("boton");
+
+            if (contrasenia.value == confirmar.value) {
+                boton.disabled = false;
+            } else {
+                boton.disabled = true;
+            }
+        }
+
+        contrasenia.addEventListener("input", checkear);
+        confirmar.addEventListener("input", checkear);
+    </script>
+</body>
+</html>

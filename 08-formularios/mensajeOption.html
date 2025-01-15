@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="radio" id="si" name="opcion" value="si">Si</label>
+        <br>
+        <input type="radio" id="no" name="opcion" value="no">No</label>
+    </form>
+    <div id="frase" hidden>Hola me llamo Carlos</div>
+
+    <script>
+        let si = document.getElementById("si");
+        let no = document.getElementById("no");
+        let frase = document.getElementById("frase");
+        
+        if (si.checked) frase.hidden = false;
+        else if (no.checked) frase.hidden = true;
+
+
+    </script>
+</body>
+</html>

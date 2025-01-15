@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boton seleccionado</title>
+</head>
+<body>
+    <form action="">
+        <label for="">Nombre</label>
+        <input type="text" id="nombre" name="nombre">
+        <label for="">Apellido</label>
+        <input type="text" name="apellido" id="apellido">
+        <input type="submit" value="Ok" id="boton" name="boton" disabled>
+    </form>
+    <script>
+        let nombre = document.getElementById("nombre");
+        let apellido = document.getElementById("apellido");
+        let boton = document.getElementById("boton");
+
+        function checkear(){
+            if (nombre.value != "" && apellido.value != "") {
+                boton.disabled = false;
+            } else {
+                boton.disabled = true;
+            }
+        }
+
+        nombre.addEventListener("input", checkear);
+        apellido.addEventListener("input", checkear);
+    </script>
+</body>
+</html>

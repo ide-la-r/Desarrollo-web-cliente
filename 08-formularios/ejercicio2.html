@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <form enctype="multipart/form-data" action="">
+        <label for="">Inserta el archivo:</label><br>
+        <input type="file" id="file"><br><br>
+        <button id="boton">Enviar</button>
+    </form>
+    
+    <script>
+        let archivo = document.getElementById("file");
+        let boton = document.getElementById("boton");
+
+        function verExtension(){
+            let file = archivo.files[0];
+            if (file) {
+                let nombreArchivo = file.name;
+                let extension = nombreArchivo.split('.').pop();
+
+                if (extension == "png" || extension == "jpg") {
+                    alert("Correcto");
+                } else{
+                    alert("El formato no es valido.");
+                }
+            } else {
+                alert("No has seleccionado nada.")
+            }
+        }
+        
+        boton.addEventListener("click", verExtension);
+    </script>
+</body>
+</html>

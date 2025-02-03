@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Validación</title>
+    <style>
+        .mensaje-validacion {
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        .correcto {
+            color: green;
+        }
+        .incorrecto {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario">
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" placeholder="DNI" >
+        <span id="dni-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre" >
+        <span id="nombre-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" >
+        <span id="apellidos-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="fecha">Fecha de Nacimiento:</label>
+        <input type="text" id="fecha" name="fecha" placeholder="dd/mm/yyyy" >
+        <span id="fecha-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="web">Web Personal:</label>
+        <input type="text" id="web" name="web" placeholder="https://" >
+        <span id="web-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" >
+        <span id="contrasena-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="contrasena2">Validar Contraseña:</label>
+        <input type="password2" id="contrasena2" name="contrasena2" placeholder="Validar Contraseña" >
+        <span id="contrasena-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <button type="reset" id="reset">Resetear</button>
+        <button type="submit" id="enviar">Enviar</button>
+    </form>
+
+    <script src="./app.js"></script>
+</body>
+</html>

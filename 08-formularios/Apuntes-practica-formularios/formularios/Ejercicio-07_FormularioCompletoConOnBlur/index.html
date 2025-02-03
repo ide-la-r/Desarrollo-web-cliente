@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Validación</title>
+</head>
+<body>
+    <form id="formulario">
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" placeholder="DNI" onblur="validarDNI()"><br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre" onblur="validarNombre()"><br><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" onblur="validarApellidos()"><br><br>
+
+        <label for="fecha">Fecha de Nacimiento:</label>
+        <input type="text" id="fecha" name="fecha" placeholder="dd/mm/yyyy" onblur="validarFecha()"><br><br>
+
+        <label for="web">Web Personal:</label>
+        <input type="text" id="web" name="web" placeholder="https://" onblur="validarWeb()"><br><br>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" onblur="validarContrasena()"><br><br>
+
+        <button type="reset" id="reset">Resetear</button>
+        <button type="submit" id="enviar">Enviar</button>
+    </form>
+
+    <script src="./app.js"></script>
+</body>
+</html>

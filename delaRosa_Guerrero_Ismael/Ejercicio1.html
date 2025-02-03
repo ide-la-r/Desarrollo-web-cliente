@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <style>
+        .mensaje-validacion {
+            font-size: 0.9em;
+            margin-left: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Nombre" >
+        <span id="nombre-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="primerapellido">Primer apellido:</label>
+        <input type="text" id="primerapellido" name="primerapellido" required placeholder="Primer apellido">
+        <span id="primerapellido-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="segundoapellido">Segundo apellido:</label>
+        <input type="text" id="segundoapellido" name="segundoapellido" placeholder="Segundo apellido">
+        <span id="segundoapellido-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto">
+        <span id="foto-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad" required placeholder="Edad" >
+        <span id="edad-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="mail" required minlength="8">
+        <span id="mail-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required placeholder="Contraseña" >
+        <span id="contrasena-mensaje" class="mensaje-validacion"></span><br><br>
+
+        <label for="contrasena2">Repite contraseña:</label>
+        <input type="password" id="contrasena2" name="contrasena2" required placeholder="Repetir contraseña" >
+        <span id="contrasena2-mensaje" class="mensaje-validacion"></span>
+        <button id="mostrar">ver contraseña</button><br><br>
+
+        <button type="reset" id="reset">Resetear</button>
+        <button type="submit" id="enviar">Enviar</button>
+    </form>
+
+    <script>
+        let valido = true;
+
+        //validar nombre
+        let errorNombre = document.getElementById("nombre-mensaje");
+        let nombre = document.getElementById("nombre");
+
+        function validarNombre(){
+            if (nombre.value == "") {
+                errorNombre.textContent = "El nombre es obligatorio";
+                valido = false;
+            } else if (nombre.value.length < 2) {
+                errorNombre.textContent = "El nombre debe tener almenos dos letras";
+                valido = false;
+            } else{
+                errorNombre.textContent = "";
+                valido = true;
+            }
+        }
+        nombre.addEventListener("input", validarNombre)
+        
+
+        //validar primer apellido
+        let errorPrimerApellido = document.getElementById("primerapellido-mensaje");
+        let primerApellido = document.getElementById("primerapellido");
+
+        function validarPrimerApellido(){
+            if (primerApellido.value == "") {
+                errorPrimerApellido.textContent = "El primer apellido es obligatorio";
+                valido = false;
+            } else if (primerApellido.value.length < 2) {
+                errorPrimerApellido.textContent = "El primer apellido debe tener almenos dos letras";
+                valido = false;
+            } else{
+                errorPrimerApellido.textContent = "";
+                valido = true;
+            }
+        }
+        primerApellido.addEventListener("input", validarPrimerApellido)
+        
+
+        //validar segundo apellido
+        let errorSegundoApellido = document.getElementById("segundoapellido-mensaje");
+        let segundoApellido = document.getElementById("segundoapellido");
+
+        function validarSegundoApellido(){
+            if (segundoApellido.value == "") {
+                errorSegundoApellido.textContent = "";
+                valido = false;
+            } else if (segundoApellido.value.length < 2) {
+                errorSegundoApellido.textContent = "El primer apellido debe tener almenos dos letras";
+                valido = false;
+            } else{
+                errorSegundoApellido.textContent = "";
+                valido = true;
+            }
+        }
+        segundoApellido.addEventListener("input", validarSegundoApellido)
+
+
+        //validar foto
+        const input = document.getElementById("foto");
+        const archivo = input.files[0];
+        let errorFoto = document.getElementById("foto-mensaje");
+        
+        function comprobarFoto(){
+            if (archivo) {
+                const nombreImg = archivo.name;
+                const extension = nombreImg.split('.').pop().toLowerCase(); 
+                if (extension != "jpg" || extension != "png") {
+                    errorFoto.textContent = "Incorrecto. Solo se aceptan archivos .jpg o .png";
+                    valido = false;
+                } else{
+                    errorFoto.textContent = "";
+                }
+            } else {
+                errorFoto.textContent = "Porfavor seleccione un archivo";
+            }
+        }
+
+        input.addEventListener("change", comprobarFoto);
+
+
+        //validar edad
+        let errorEdad = document.getElementById("edad-mensaje");
+        let edad = document.getElementById("edad");
+
+        function validarEdad(){
+            if (edad.value == "") {
+                errorEdad.textContent = "La edad es obligatoria";
+                valido = false;
+            } else if (edad.value < 18 || edad.value > 99) {
+                errorEdad.textContent = "No puedes ser menor de 18 años o mayor de 99";
+                valido = false;
+            } else{
+                errorEdad.textContent = "";
+                valido = true;
+            }
+        }
+        edad.addEventListener("input", validarEdad)
+
+        //email
+        let email = document.getElementById("mail");
+
+        //validar contraseña
+        let errorContrasena = document.getElementById("contrasena-mensaje");
+        let contrasena = document.getElementById("contrasena");
+
+        function validarContrasena(){
+            if (contrasena.value == "") {
+                errorContrasena.textContent = "La contraseña es obligatoria";
+                valido = false;
+            } else if (contrasena.value.length < 8 || contrasena.value.length > 10) {
+                errorContrasena.textContent = "No puede ser mas pequeña de 8 caracteres o mas de 10 caracteres";
+                valido = false;
+            } else{
+                errorContrasena.textContent = "";
+                valido = true;
+            }
+        }
+        contrasena.addEventListener("input", validarContrasena);
+
+
+        //Validar contraseña 2
+        let errorContrasena2 = document.getElementById("contrasena2-mensaje");
+        let contrasena2 = document.getElementById("contrasena2");
+
+        function checkear(){
+            if (contrasena.value != contrasena2.value) {
+                errorContrasena2.textContent = "Las contraseñas no son iguales";
+                valido = false;
+            } else {
+                errorContrasena2.textContent = "";
+                valido = true;
+            }
+        }
+        contrasena2.addEventListener("input", checkear);
+
+        
+        let ocultar = document.getElementById('ocultar');
+
+        // Al seleccionar "Mostrar Contraseña", cambiamos el tipo de input a "text"
+        mostrar.addEventListener('change', function() {
+          if (mostrar.checked) {
+            contrasena2.type = 'text';
+          }
+        });
+    
+        let enviar = document.getElementById("enviar");
+
+        function mensajeAlert(){
+            alert(`
+            Nombre: ${nombre}
+            Primer apellido: ${primerApellido}
+            Segundo Apellido: ${segundoApellido}
+            Edad: ${edad}
+            Email: ${email}
+            Contraseña: ${contrasena}
+            `)
+        }
+
+        enviar.addEventListener("click", mensajeAlert);
+
+    </script>
+</body>
+</html>
